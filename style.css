@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Yellowtail&display=swap');
+/*     
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Yellowtail', cursive;
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+:root{
+    --ff-normal: 'Noto Sans JP', sans-serif;
+    --ff-italic: 'Yellowtail', cursive;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    font-family: var(--ff-normal);
+    height: 100vh;
+    /* background-color: #c8d6e5; */
+    min-width: 300px;
+    min-height: 300px;
+
+    
+    background-image: linear-gradient(to right top, #05193791, #004d7a91, #00879391, #00bf7291, #a8eb1291);
+}
+a{
+    text-decoration: none;
+    font-family: var(--ff-normal);
+}
+input, button{
+    background: none;
+    border: none;
+    font-family: var(--ff-normal);
+}
+
+
+.container{
+    display: flex;
+    width: 90%;
+    min-width: 300px;
+    min-height: 300px;
+    overflow: hidden;
+    padding: 10px 30px;
+}
+
+.panel{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    min-height: 100%;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: all 1s ease-in;
+    background-color: rgba(255, 166, 0, 0.02);
+    background-blend-mode: overlay;
+}
+
+.panel h3{
+    font-family: var(--ff-italic);
+    font-size: 3rem;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+    color: #f7f1e3;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    transition: opacity 0.5s ease-in 1s;
+}
+.panel:nth-of-type(5) h3{
+    color: #3d3d3d;
+}
+
+.panel.active{
+    flex: 5;
+    
+    box-shadow: 1px 1px 10px 10px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 1px 1px 10px 10px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 10px 10px rgba(0,0,0,0.2);
+}
+
+.panel.active h3{
+    opacity: 1;
+
+}
+
+@media(max-width: 480px){
+    .container{
+        padding: 0;
+        width: 100vw;
+    }
+    .panel h3{
+        font-size: 2rem;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
